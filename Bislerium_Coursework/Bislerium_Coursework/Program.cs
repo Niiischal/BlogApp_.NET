@@ -126,12 +126,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:3000") 
+          .AllowAnyMethod()
+          .AllowAnyHeader()
+          .AllowCredentials());
 
+
+app.UseRouting();
+app.UseHttpsRedirection();
 app.UseAuthentication(); // Ensures authentication middleware is applied correctly
 app.UseAuthorization();
-
-app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.MapControllers();
 

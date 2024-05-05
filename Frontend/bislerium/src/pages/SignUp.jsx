@@ -1,4 +1,4 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -14,17 +14,17 @@ const SignUp = () => {
 
   const handleSubmit = async (values) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/Authentication/Register', values);
+      const response = await axios.post('http://localhost:5142/api/Authentication/Register', values);
       console.log('User registered:', response.data);
-      alert('Registration successful! Please check your email to confirm your account.');
-      form.resetFields();
+      message.success(`Registration successful! Please check your email to confirm your account.`);
+      form.resetFields(); // Reset form fields after successful registration
     } catch (error) {
       if (error.response) {
         console.error('Registration error:', error.response.data);
-        alert(`Failed to register: ${error.response.data.message}`);
+        message.error(`Failed to register: ${error.response.data.message}`);
       } else {
         console.error('Error:', error.message);
-        alert('Registration failed. Please try again.');
+        message.error('Registration failed. Please try again.');
       }
     }
   };

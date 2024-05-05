@@ -147,3 +147,4 @@ D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework\bin\Debug\net8.0\NETCo
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework\bin\Debug\net8.0\Bislerium_Coursework_Service.dll
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework\bin\Debug\net8.0\Bislerium_Coursework_Service.pdb
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework\obj\Debug\net8.0\Bislerium_Coursework.sourcelink.json
