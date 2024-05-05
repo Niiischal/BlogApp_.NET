@@ -1,6 +1,6 @@
 import { Button, Form, Input, message } from "antd";
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const rules = [
   {
@@ -11,13 +11,15 @@ const rules = [
 
 const SignUp = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate()
 
   const handleSubmit = async (values) => {
     try {
       const response = await axios.post('http://localhost:5142/api/Authentication/Register', values);
-      console.log('User registered:', response.data);
-      message.success(`Registration successful! Please check your email to confirm your account.`);
-      form.resetFields(); // Reset form fields after successful registration
+      if(response.status === 201){
+        message.success("Registration successful! Please check your email to confirm your account.");
+      navigate("/login")
+      }
     } catch (error) {
       if (error.response) {
         console.error('Registration error:', error.response.data);

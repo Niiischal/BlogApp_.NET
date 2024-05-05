@@ -1,5 +1,6 @@
-import { Button, Form, Input, } from "antd";
-import { Link } from "react-router-dom";
+import { Button, Form, Input, message } from "antd";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const rules = [
   {
@@ -9,12 +10,36 @@ const rules = [
 ];
 
 const Login = () => {
+  const [form] = Form.useForm();
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (values) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5142/api/Authentication/Login",
+        values
+      );
+      if (response.staus === 201) {
+        message.success("Login successful!");
+        navigate("/home");
+      }
+    } catch (error) {
+      if (error.response) {
+        console.error("Login error:", error.response.data);
+        message.error(`Failed to Login: ${error.response.data.message}`);
+      } else {
+        console.error("Error:", error.message);
+        message.error("Login failed. Please try again.");
+      }
+    }
+  };
   return (
     <>
       <div className="h-screen flex justify-center items-center">
         <div className="form-container p-5 rounded-sm w-[350px] border-solid border border-primary bg-[#fcfdfd] cursor-pointer shadow-lg hover:shadow-xl transition duration-300">
           <h1 className="text-[30px] my-2">Login</h1>
-          <Form layout="vertical">
+          <Form layout="vertical" onFinish={handleSubmit}>
             <Form.Item
               label="Username"
               name="username"

@@ -31,13 +31,13 @@ namespace Bislerium_Coursework.Data
 
         private static void SeedAdminUser(ModelBuilder builder)
         {
-            var adminUserId = "admin-user-id"; // Consider a constant GUID here
+            var adminUserId = "admin-userid"; // Consider a constant GUID here
             var hasher = new PasswordHasher<IdentityUser>();
 
             var adminUser = new IdentityUser
             {
                 Id = adminUserId,
-                UserName = "admin",
+                UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 Email = "admin@gmail.com",
                 NormalizedEmail = "ADMIN@GMAIL.COM",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bislerium_Coursework.Migrations.AuthDb
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20240505123220_admin")]
-    partial class admin
+    [Migration("20240505165502_Admin")]
+    partial class Admin
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,19 +158,19 @@ namespace Bislerium_Coursework.Migrations.AuthDb
                     b.HasData(
                         new
                         {
-                            Id = "admin-user-id",
+                            Id = "admin-userid",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "82c6b8eb-46e3-4cdf-83cc-dfaee81e1f3d",
+                            ConcurrencyStamp = "90b43045-439d-463f-9a8c-39581e416052",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEF+8Vjo4mC4Zlgtj7APQ5KvMmeOPuivTsn9xWh8ddVOgsaL1zX0bZufkkCkmYBDyQQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIt+0wXINQxAwOjToEaYCKhwbFD41MNwQ5VrOU5A+euVH1laVBx1jZtfHmA15XDStg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1691dfdf-a4df-4f16-9e0e-c84b062e8d89",
+                            SecurityStamp = "42dd9041-bb4a-42d3-8d48-d1de75b80a0d",
                             TwoFactorEnabled = false,
-                            UserName = "admin"
+                            UserName = "Admin"
                         });
                 });
 
@@ -238,7 +238,7 @@ namespace Bislerium_Coursework.Migrations.AuthDb
                     b.HasData(
                         new
                         {
-                            UserId = "admin-user-id",
+                            UserId = "admin-userid",
                             RoleId = "1"
                         });
                 });
