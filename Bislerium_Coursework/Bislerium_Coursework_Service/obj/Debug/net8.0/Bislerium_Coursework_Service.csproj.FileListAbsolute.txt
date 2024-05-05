@@ -1,0 +1,12 @@
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.deps.json
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.dll
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.pdb
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.csproj.AssemblyReference.cache
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.AssemblyInfoInputs.cache
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.AssemblyInfo.cs
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.csproj.CoreCompileInputs.cache
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.dll
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\refint\Bislerium_Coursework_Service.dll
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.pdb
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\ref\Bislerium_Coursework_Service.dll

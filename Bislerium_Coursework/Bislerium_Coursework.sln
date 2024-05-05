@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bislerium_Coursework", "Bislerium_Coursework\Bislerium_Coursework.csproj", "{C26391CD-B4B2-4C45-A9BD-9FAA167999DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bislerium_Coursework_Service", "Bislerium_Coursework_Service\Bislerium_Coursework_Service.csproj", "{A7AC3EE7-CC70-4EEC-8C6E-FDDB3546CD92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C26391CD-B4B2-4C45-A9BD-9FAA167999DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26391CD-B4B2-4C45-A9BD-9FAA167999DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26391CD-B4B2-4C45-A9BD-9FAA167999DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26391CD-B4B2-4C45-A9BD-9FAA167999DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AC3EE7-CC70-4EEC-8C6E-FDDB3546CD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7AC3EE7-CC70-4EEC-8C6E-FDDB3546CD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7AC3EE7-CC70-4EEC-8C6E-FDDB3546CD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7AC3EE7-CC70-4EEC-8C6E-FDDB3546CD92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7653652A-F346-4198-B854-0AA7FF048A7C}
+	EndGlobalSection
+EndGlobal

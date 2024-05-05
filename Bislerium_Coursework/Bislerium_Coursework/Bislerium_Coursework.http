@@ -1,0 +1,6 @@
+@Bislerium_Coursework_HostAddress = http://localhost:5142
+
+GET {{Bislerium_Coursework_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
