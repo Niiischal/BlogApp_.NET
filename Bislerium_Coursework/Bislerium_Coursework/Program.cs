@@ -51,6 +51,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Require Confirmed Email for SignIn
 builder.Services.Configure<IdentityOptions>(opts => opts.SignIn.RequireConfirmedEmail = true);
 
+// Token
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan =  TimeSpan.FromHours(10));
+
+
 // Setup Authentication using JWT
 builder.Services.AddAuthentication(options =>
 {

@@ -37,13 +37,15 @@ namespace Bislerium_Coursework.Controllers
             UserManager<IdentityUser> userManager,
             IConfiguration configuration,
             IEmailService emailService,
-            AuthDbContext context)  // Inject AuthDbContext here
+            AuthDbContext context,
+            ILogger<AuthenticationController> logger)  
         {
             _roleManager = roleManager;
             _userManager = userManager;
             _configuration = configuration;
             _emailService = emailService;
             _context = context;  // Initialize the context
+            _logger = logger;
         }
 
         [HttpPost("Register")]
@@ -167,67 +169,60 @@ namespace Bislerium_Coursework.Controllers
                 return NotFound(new Response { Status = "Error", Message = "User not found" });
             }
 
-            var resetCode = new Random().Next(100000, 999999).ToString();
-            await SaveResetCode(user.Id, resetCode, DateTime.UtcNow.AddMinutes(30));
+            // Generate reset token
+            var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            var emailMessage = new Message(new string[] { user.Email }, "Reset Password", $"Your password reset code is: {resetCode}. This code is valid for 30 minutes.");
-            _emailService.SendEmail(emailMessage);
-
-            return Ok(new Response { Status = "Success", Message = "Password reset code has been sent to your email address." });
-
-        }
-
-        private async Task SaveResetCode(string userId, string code, DateTime expiration)
-        {
-            var resetCode = new ResetPasswordCode
+            // Save the token with expiry in the database (optional: handle expiry manually)
+            var resetEntry = new ResetPasswordCode
             {
-                UserId = userId,
-                Code = code,
-                ExpiryDate = expiration
+                UserId = user.Id,
+                Code = resetToken,
+                ExpiryDate = DateTime.UtcNow.AddHours(1) // Token expiry time
             };
-            _context.ResetPasswordCodes.Add(resetCode);
+
+            _context.ResetPasswordCodes.Add(resetEntry);
             await _context.SaveChangesAsync();
+
+            // Send email with the token
+            var emailMessage = $"Your password reset code is: {resetToken}";
+            _emailService.SendEmail(new Message(new string[] { user.Email }, "Reset Your Password", emailMessage));
+
+            return Ok(new Response { Status = "Success", Message = "Password reset token has been sent to your email address." });
         }
+
 
 
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
         {
-            _logger.LogInformation("Resetting password for {Email}", model.Email);
-
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                _logger.LogWarning("User not found for email {Email}", model.Email);
                 return BadRequest(new Response { Status = "Error", Message = "User not found" });
             }
 
-            if (!_resetCodes.TryGetValue(user.Id, out var storedCode))
+            // Validate the reset token
+            var resetEntry = await _context.ResetPasswordCodes.FirstOrDefaultAsync(x => x.UserId == user.Id && x.Code == model.Code && x.ExpiryDate > DateTime.UtcNow);
+            if (resetEntry == null)
             {
-                _logger.LogWarning("Reset code not found or expired for user {UserId}", user.Id);
-                return BadRequest(new Response { Status = "Error", Message = "No reset code found or code expired" });
-            }
-
-            if (model.Code != storedCode.Code || DateTime.UtcNow > storedCode.Expiration)
-            {
-                _logger.LogWarning("Invalid or expired reset code provided for user {UserId}", user.Id);
                 return BadRequest(new Response { Status = "Error", Message = "Invalid or expired reset code" });
             }
 
-            var resetPassResult = await _userManager.ResetPasswordAsync(user, storedCode.Code, model.NewPassword);
+            // Reset the password
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, model.Code, model.NewPassword);
             if (!resetPassResult.Succeeded)
             {
-                var errors = resetPassResult.Errors.Select(e => e.Description);
-                _logger.LogError("Password reset failed for user {UserId}: {Error}", user.Id, string.Join(", ", errors));
+                var errors = resetPassResult.Errors.Select(e => e.Description).ToArray();
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = string.Join(", ", errors) });
             }
 
-            // Clear the reset code after successful reset
-            _resetCodes.Remove(user.Id);
+            // Remove the reset token entry from the database
+            _context.ResetPasswordCodes.Remove(resetEntry);
+            await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Password successfully reset for user {UserId}", user.Id);
             return Ok(new Response { Status = "Success", Message = "Password has been reset successfully." });
         }
+
 
 
     }
