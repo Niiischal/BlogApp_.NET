@@ -23,3 +23,4 @@ F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8
 F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\refint\Bislerium_Coursework_Service.dll
 F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.pdb
 F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\ref\Bislerium_Coursework_Service.dll
+D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.sourcelink.json

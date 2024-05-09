@@ -4750,23 +4750,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\acer\\.nuget\\packages\\": {},
+    "C:\\Users\\Acer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\Bislerium_Coursework.csproj",
+      "projectUniqueName": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\Bislerium_Coursework.csproj",
       "projectName": "Bislerium_Coursework",
-      "projectPath": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\Bislerium_Coursework.csproj",
-      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\obj\\",
+      "projectPath": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\Bislerium_Coursework.csproj",
+      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+      "outputPath": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4782,8 +4782,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj": {
-              "projectPath": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj"
+            "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj": {
+              "projectPath": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj"
             }
           }
         }
