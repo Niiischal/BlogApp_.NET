@@ -398,23 +398,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Acer\\.nuget\\packages\\": {},
+    "C:\\Users\\acer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj",
+      "projectUniqueName": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj",
       "projectName": "Bislerium_Coursework_Service",
-      "projectPath": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj",
-      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "D:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\obj\\",
+      "projectPath": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\Bislerium_Coursework_Service.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "F:\\BlogApp_.NET\\Bislerium_Coursework\\Bislerium_Coursework_Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

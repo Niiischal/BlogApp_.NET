@@ -10,3 +10,16 @@ D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\refint\Bislerium_Coursework_Service.dll
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.pdb
 D:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\ref\Bislerium_Coursework_Service.dll
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.deps.json
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.dll
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\bin\Debug\net8.0\Bislerium_Coursework_Service.pdb
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.csproj.AssemblyReference.cache
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.AssemblyInfoInputs.cache
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.AssemblyInfo.cs
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.csproj.CoreCompileInputs.cache
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.sourcelink.json
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.dll
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\refint\Bislerium_Coursework_Service.dll
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\Bislerium_Coursework_Service.pdb
+F:\BlogApp_.NET\Bislerium_Coursework\Bislerium_Coursework_Service\obj\Debug\net8.0\ref\Bislerium_Coursework_Service.dll
