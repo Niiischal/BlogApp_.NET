@@ -1,30 +1,20 @@
-import React, { useState } from 'react';
-import { Form, Input, Button, message } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import axios from 'axios';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ForgetPassword = () => {
   const [form] = Form.useForm();
   const [isResetting, setIsResetting] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [email, setEmail] = useState(""); // State to hold the email
   const navigate = useNavigate();
-
-  // Check if the URL contains token parameters to determine the mode
-  const token = searchParams.get('token');
-  const email = searchParams.get('email');
-
-  // When component mounts, check if we should switch to resetting mode
-  useState(() => {
-    if (token && email) {
-      setIsResetting(true);
-    }
-  }, [token, email]);
 
   const handleResetRequest = async (values) => {
     try {
       const response = await axios.post('http://localhost:5142/api/Authentication/ForgotPassword', values);
       message.success(response.data.message);
-      form.resetFields();
+      setEmail(values.email); // Set the email in state after successful request
+      setIsResetting(true); // Switch to reset mode
     } catch (error) {
       message.error(error.response.data.message);
     }
@@ -32,10 +22,11 @@ const ForgetPassword = () => {
 
   const handlePasswordReset = async (values) => {
     try {
+      // Include the email in the reset password request
       const response = await axios.post('http://localhost:5142/api/Authentication/ResetPassword', {
-        ...values,
-        token,
-        email
+        email, // Use the email stored in state
+        code: values.code,
+        newPassword: values.newPassword
       });
       message.success('Password reset successful!');
       navigate('/login');
@@ -45,29 +36,41 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div style={{ maxWidth: 300, margin: 'auto', paddingTop: 50 }}>
-      <h1 className="text-center">{isResetting ? 'Reset Your Password' : 'Request Password Reset'}</h1>
-      <Form form={form} onFinish={isResetting ? handlePasswordReset : handleResetRequest}>
-        {!isResetting && (
+    <div className="h-screen flex justify-center items-center">
+    <div className='form-container p-5 rounded-sm w-[350px] border-solid border border-primary bg-[#fcfdfd] cursor-pointer shadow-lg hover:shadow-xl transition duration-300'>
+      <h1 className="text-center">{isResetting ? 'Enter Your Reset Code' : 'Request Password Reset'}</h1>
+      <Form layout='vertical' form={form} onFinish={isResetting ? handlePasswordReset : handleResetRequest}>
+        {!isResetting ? (
           <Form.Item
             name="email"
+            label="Email Address"
             rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
           >
-            <Input placeholder="Email" />
+            <Input placeholder="Enter your email" />
           </Form.Item>
-        )}
-        {isResetting && (
-          <Form.Item
-            name="newPassword"
-            rules={[{ required: true, message: 'Please input your new password!' }]}
-          >
-            <Input.Password placeholder="New Password" />
-          </Form.Item>
+        ) : (
+          <>
+            <Form.Item
+              name="code"
+              label="Reset Code"
+              rules={[{ required: true, message: 'Please input your reset code!' }]}
+            >
+              <Input placeholder="Enter reset code" />
+            </Form.Item>
+            <Form.Item
+              name="newPassword"
+              label="New Password"
+              rules={[{ required: true, message: 'Please input your new password!' }]}
+            >
+              <Input.Password placeholder="Enter new password" />
+            </Form.Item>
+          </>
         )}
         <Button type="primary" htmlType="submit" block>
           {isResetting ? 'Reset Password' : 'Send Reset Link'}
         </Button>
       </Form>
+    </div>
     </div>
   );
 };
