@@ -1,3 +1,4 @@
+using Bislerium_Coursework.Controllers;
 using Bislerium_Coursework.Data;
 using Bislerium_Coursework_Service.Model;
 using Bislerium_Coursework_Service.Services;
@@ -12,6 +13,9 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// This line ensures logging services are available
+builder.Logging.AddConsole();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -47,6 +51,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Require Confirmed Email for SignIn
 builder.Services.Configure<IdentityOptions>(opts => opts.SignIn.RequireConfirmedEmail = true);
 
+// Token
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan =  TimeSpan.FromHours(10));
+
+
 // Setup Authentication using JWT
 builder.Services.AddAuthentication(options =>
 {
@@ -78,6 +86,8 @@ builder.Services.AddSingleton(emailConfig);
 
 // Register EmailSender as a scoped service
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+builder.Services.AddScoped<AuthenticationController>();
 
 // Swagger configuration
 builder.Services.AddEndpointsApiExplorer();

@@ -4,6 +4,7 @@ using Bislerium_Coursework.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bislerium_Coursework.Migrations.AuthDb
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240505194209_UpdateResetPasswordCode")]
+    partial class UpdateResetPasswordCode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,15 +186,15 @@ namespace Bislerium_Coursework.Migrations.AuthDb
                         {
                             Id = "admin-userid",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "14af14ec-9869-4647-8d29-87fab4b7b770",
+                            ConcurrencyStamp = "ec88c464-1764-450e-9604-a74aee6feb2a",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIsLY9O2yJdaNvcPrg+/yCX5nTfrAy5vuheJh4J1vj/Wi/lGQFdfCsBrNRQQ9yOfJw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPv7032zzjri8yQv7n5pyT3rBwY38326hzQV6aqDPwCAeFfEqWdoPKemtGpgv5+3CA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1351dc6d-a84c-47f4-9d7c-6b6ce750605c",
+                            SecurityStamp = "d6221938-0ca8-4ed1-bc93-8e0e21d3e31d",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Bislerium_Coursework.Model.Authentication.ResetPassword;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,9 +11,21 @@ namespace Bislerium_Coursework.Data
         {
         }
 
+        public DbSet<ResetPasswordCode> ResetPasswordCodes { get; set; } // Ensures ResetPasswordCode is included in the context
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            // Configure the primary key and relationships for ResetPasswordCode
+            builder.Entity<ResetPasswordCode>(entity =>
+            {
+                entity.HasKey(rpc => rpc.Id);
+                entity.HasOne<IdentityUser>(rpc => rpc.User)
+                    .WithMany()
+                    .HasForeignKey(rpc => rpc.UserId)  // Ensure this matches the foreign key column name in the database.
+                    .IsRequired();
+            });
 
             // Seed roles
             SeedRoles(builder);
@@ -31,7 +44,7 @@ namespace Bislerium_Coursework.Data
 
         private static void SeedAdminUser(ModelBuilder builder)
         {
-            var adminUserId = "admin-userid"; // Consider a constant GUID here
+            var adminUserId = "admin-userid"; // Consider using a constant GUID here
             var hasher = new PasswordHasher<IdentityUser>();
 
             var adminUser = new IdentityUser
